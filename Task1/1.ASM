@@ -6,7 +6,6 @@ include 'win32a.inc'
 section '.data' data readable writable
 
         helloStr db 'This is my first program!', 0
-        firstInteger db "%d", 0
 
         NULL = 0
 
@@ -15,11 +14,6 @@ section '.code' code readable executable
                 push helloStr
 
                 call [printf]
-
-                push firstInteger
-                call [scanf]
-                push firstInteger
-                call[printf]
                 call [getch]
 
                 push NULL
